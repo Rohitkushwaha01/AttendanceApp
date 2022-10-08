@@ -54,14 +54,14 @@ app.post("/FacultyRegister", (req, res) => {
     password: req.body.facultyPassword
   });
 
-  console.log(newFaculty)
+  console.log(newFaculty);
 
   newFaculty.save(function (err) {
     if (err) {
       console.log(err);
     } else {
       console.log(`you are Registered`);
-      res.render("/FacultyPage");
+      res.render("FacultyPage");
     }
   });
 });
