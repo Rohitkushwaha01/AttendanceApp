@@ -47,6 +47,10 @@ app.get("/FacultyRegister", (req, res) => {
   res.render("FacultyRegister");
 });
 
+app.get("/FacultyPage", (req, res) => {
+    res.render("FacultyPage");
+});
+
 app.post("/FacultyRegister", (req, res) => {
   const newFaculty = User({
     name: req.body.facultyName,
@@ -61,7 +65,7 @@ app.post("/FacultyRegister", (req, res) => {
       console.log(err);
     } else {
       console.log(`you are Registered`);
-      res.render("FacultyPage");
+      res.redirect("/FacultyPage");
     }
   });
 });
