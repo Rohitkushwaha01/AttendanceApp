@@ -11,7 +11,7 @@ app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: true }));
 
 mongoose.connect(
-  `mongodb+srv://new-rohit:${process.env.MONGOPASS}@cluster0.gotayl4.mongodb.net/AttendanceDB`
+  `mongodb+srv://${process.env.MONGOUSERID}:${process.env.MONGOPASS}@cluster0.gotayl4.mongodb.net/AttendanceDB`
 );
 
 const UsersSchema = new mongoose.Schema({
