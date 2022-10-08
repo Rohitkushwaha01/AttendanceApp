@@ -1,0 +1,17 @@
+.c-prop{
+    background-color: black !important;
+    color: white !important;
+    width: 50%;
+}
+.c-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+}
+@media (max-width: 768px) {
+    .c-prop{
+        width: 100%;
+    }
+ }
