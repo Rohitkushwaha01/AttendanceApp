@@ -2,6 +2,7 @@ require("dotenv").config();
 const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
+const mongodb = require("mongodb");
 const ejs = require("ejs");
 
 const app = express();
@@ -50,8 +51,10 @@ app.post("/FacultyRegister", (req, res) => {
   const newFaculty = User({
     name: req.body.facultyName,
     email: req.body.facultyEmail,
-    password: req.body.facultyPassword,
+    password: req.body.facultyPassword
   });
+
+  console.log(newFaculty)
 
   newFaculty.save(function (err) {
     if (err) {
