@@ -21,7 +21,13 @@ const UsersSchema = new mongoose.Schema({
   password: String,
 });
 
+const StudentsSchema = new mongoose.Schema({
+  name: String,
+  rollno: String,
+});
+
 const User = new mongoose.model("User", UsersSchema);
+const Student = new mongoose.model("Student", StudentsSchema);
 
 app.listen(3000, () => {
   console.log("Server is running on 3000");
@@ -48,14 +54,14 @@ app.get("/FacultyRegister", (req, res) => {
 });
 
 app.get("/FacultyPage", (req, res) => {
-    res.render("FacultyPage");
+  res.render("FacultyPage");
 });
 
 app.post("/FacultyRegister", (req, res) => {
   const newFaculty = User({
     name: req.body.facultyName,
     email: req.body.facultyEmail,
-    password: req.body.facultyPassword
+    password: req.body.facultyPassword,
   });
 
   console.log(newFaculty);
@@ -67,5 +73,32 @@ app.post("/FacultyRegister", (req, res) => {
       console.log(`you are Registered`);
       res.redirect("/FacultyPage");
     }
+  });
+});
+
+app.get("/Compose", (req, res) => {
+  res.render("Compose");
+});
+
+app.post("/Compose", (req, res) => {
+  const newStudent = Student({
+    name: req.body.StudentName,
+    rollno: req.body.StudentRollNo,
+  });
+
+  console.log(newStudent);
+
+  newStudent.save(function (err) {
+    res.redirect("/Compose");
+    console.log(`Student Added`);
+  });
+});
+
+app.get("/StudentList", (req, res) => {
+  Student.find({}, function (err, results) {
+    const studentArray = results.map((result) => result);
+    const i = 1;
+    console.log(studentArray);
+    res.render("StudentList", { i, studentArray });
   });
 });

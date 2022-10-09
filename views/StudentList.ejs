@@ -1,0 +1,25 @@
+<%- include('partials/header') %> <%- include('navbar') %>
+
+<div class="container">
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Roll No</th>
+          </tr>
+        </thead>
+        <tbody>
+            <% studentArray.forEach(function(student){ %>
+                <tr>
+                    <th scope="row"><%=i%></th>
+                    <td><%= student.name %> </td>
+                    <td><%= student.rollno %></td>
+                  </tr>
+            <% i++ %> 
+            <% }) %>
+        </tbody>
+      </table>
+</div>
+
+<%- include('partials/footer') %>

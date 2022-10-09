@@ -1,14 +1,11 @@
 <%- include('partials/header') %> <%- include('navbar') %>
 <div class="container">
-  <div class="d-flex c-flex">
-    <div class="items">
-      A division
-    </div>
-    <div class="items">
-      B division
-    </div>
-    <div class="items">
-      C division
-    </div>
-  </div>
+  <form action="/Compose" method="get">
+    <Button>Compose</Button>
+  </form>
+  <form action="/StudentList" method="get">
+    <Button>Students List</Button>
+  </form>
 </div>
+
+<%- include('partials/footer') %>
