@@ -56,10 +56,6 @@ app.get("/StudentLogin", (req, res) => {
   res.render("StudentLogin");
 });
 
-app.get("/StudentRegister", (req, res) => {
-  res.render("StudentRegister");
-});
-
 app.get("/FacultyLogin", (req, res) => {
   res.render("FacultyLogin");
 });
