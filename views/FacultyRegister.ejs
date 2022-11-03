@@ -1,29 +1,30 @@
 <%- include('partials/header') %> <%- include('homenavbar') %>
 
-<div class="c-container container">
+<div class="c-container d-flex">
   <img src="https://images.unsplash.com/flagged/photo-1554473675-d0904f3cbf38?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fGNvbGxlZ2V8ZW58MHx8MHx8&w=1000&q=80" alt="" class="blur-img">
   <h1>Faculty Registeration</h1>
   <form class="c-prop" action="/FacultyRegister" method="post">
-    <div class="m-5">
+    <div class="m-2">
       <label for="exampleInputEmail1" class="form-label">Full Name</label>
       <input type="text" class="form-control" placeholder="Full Name" name="facultyName" />
     </div>
-    <div class="m-5">
+    <div class="m-2">
       <label for="exampleInputEmail1" class="form-label">Email address</label>
-      <input
-        type="email"
-        class="form-control"
-        id="exampleInputEmail1"
-        aria-describedby="emailHelp"
-        placeholder="Email Address"
-        name="facultyEmail"
-      />
+      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email Address" name="facultyEmail"/>
     </div>
-    <div class="m-5">
+    <div class="m-2">
+      <label for="Designation" class="form-label">Designation</label>
+      <input type="text" class="form-control" id="Designation" placeholder="Designation" name="facultyDesignation"/>
+    </div>
+    <div class="m-2">
+      <label for="Number" class="form-label">Number</label>
+      <input type="number" class="form-control" id="Designation" placeholder="Number" name="facultyNumber"/>
+    </div>
+    <div class="m-2">
       <label for="exampleInputPassword1" class="form-label">Password</label>
-      <input type="password" class="form-control" id="exampleInputPassword1" name="facultyPassword" />
+      <input type="password" class="form-control" id="exampleInputPassword1" name="facultyPassword" placeholder="Password"/>
     </div>
-    <div class="m-5">
+    <div class="m-2">
       <button type="submit" class="btn btn-primary">Login</button>
     </div>
   </form>

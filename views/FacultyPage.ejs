@@ -1,6 +1,21 @@
 <%- include('partials/header') %> <%- include('FacultyNavbar') %>
-<div class="container">
-  <div class="container-fluid d-flex justify-content-between">
+<div class="c-box">
+  
+  <div class="c-item1">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS57cxS-wC2GujcEE-N_c5epmqhydszCHIk1Q&usqp=CAU" alt="">
+    <div class="c-info">
+      <% FacultyUser.forEach(result => { %>
+        <p>Name : <%=result.name%></p>
+        <p>Email Id : <%=result.email%></p>
+        <p>Designation : <%=result.designation%> </p>
+        <p>Department : ENTC </p>
+        <p>College Name : Dr.D.Y.Patil institute of technology</p>
+        <p>Contact Number : <%=result.contact%></p>
+      <% }) %>
+    </div>
+  </div>
+  <div class="c-item2">
+    <div class="">
     <form action="/Compose" method="get">
       <Button>Add Student</Button>
     </form>
@@ -8,7 +23,7 @@
       <Button>Students List</Button>
     </form>
   </div>
-  
+  </div>
 </div>
 
 <%- include('partials/footer') %>

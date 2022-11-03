@@ -1,0 +1,31 @@
+.c-box{
+    display: flex;
+    justify-content: space-between;
+    height: 92vh;
+}
+
+.c-item1{
+    background-color: black;
+    color: white;
+    width: 30%;
+}
+
+.c-item1 img{
+    text-align: center;
+    border-radius: 100%;
+    width: 30%;
+    height: 20%;
+    display: block;
+    margin: 20px auto;
+}
+
+.c-info{
+    margin: 20px 5px 5px 20px;
+}
+
+.c-item2{
+    background-color: rgb(128, 125, 125);
+    color: rgb(13, 12, 12);
+    width: 70%;
+
+}

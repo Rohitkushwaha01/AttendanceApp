@@ -11,13 +11,17 @@ app.set("view engine", "ejs");
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: true }));
 
-mongoose.connect(
-  `mongodb+srv://${process.env.MONGOUSERID}:${process.env.MONGOPASS}@cluster0.gotayl4.mongodb.net/AttendanceDB`
-);
+// mongoose.connect(
+//   `mongodb+srv://${process.env.MONGOUSERID}:${process.env.MONGOPASS}@cluster0.gotayl4.mongodb.net/AttendanceDB`
+// );
 
-const UsersSchema = new mongoose.Schema({
+mongoose.connect("mongodb://localhost:27017/AttendanceDB");
+
+const FacultyUsersSchema = new mongoose.Schema({
   name: String,
   email: String,
+  designation: String,
+  contact: Number,
   password: String,
 });
 
@@ -33,9 +37,12 @@ const PresentStudentSchema = new mongoose.Schema({
   date: Date,
 });
 
-const User = new mongoose.model("User", UsersSchema);
+const FacultyUser = new mongoose.model("User", FacultyUsersSchema);
 const Student = new mongoose.model("Student", StudentsSchema);
-const PresentStudent = new mongoose.model("PresentStudent", PresentStudentSchema);
+const PresentStudent = new mongoose.model(
+  "PresentStudent",
+  PresentStudentSchema
+);
 
 app.listen(3000, () => {
   console.log("Server is running on 3000");
@@ -57,18 +64,37 @@ app.get("/FacultyLogin", (req, res) => {
   res.render("FacultyLogin");
 });
 
+app.post("/FacultyLogin", function (req, res) {
+  console.log(req.body.email)
+  FacultyUser.find({"password":req.body.password}, function(err, foundUser){
+    if(foundUser){
+      // console.log(foundUser);
+      res.redirect('/FacultyPage')
+    }
+    else{
+      console.log("not found")
+    }
+  })
+});
+
 app.get("/FacultyRegister", (req, res) => {
   res.render("FacultyRegister");
 });
 
 app.get("/FacultyPage", (req, res) => {
-  res.render("FacultyPage");
+  FacultyUser.find({"password":"12345"}, function(err, results){
+    const FacultyUser = results.map((result) => result);
+    // console.log(FacultyUser)
+    res.render("FacultyPage", {FacultyUser});
+  })
 });
 
 app.post("/FacultyRegister", (req, res) => {
-  const newFaculty = User({
+  const newFaculty = FacultyUser({
     name: req.body.facultyName,
     email: req.body.facultyEmail,
+    designation: req.body.facultyDesignation,
+    contact: req.body.facultyNumber,
     password: req.body.facultyPassword,
   });
 
@@ -79,6 +105,12 @@ app.post("/FacultyRegister", (req, res) => {
       console.log(err);
     } else {
       console.log(`you are Registered`);
+      // res.render("/FacultyPage", {
+      //   facultyName: req.body.facultyName,
+      //   facultyEmail: req.body.facultyEmail,
+      //   facultyDesignation: req.body.facultyDesignation,
+      //   facultyNumber: req.body.facultyNumber,
+      // });
       res.redirect("/FacultyPage");
     }
   });
@@ -109,7 +141,7 @@ app.get("/StudentList", (req, res) => {
 });
 
 app.post("/StudentList", (req, res) => {
-  console.log(req.body)
+  console.log(req.body);
   // const newPresentStudents = PresentStudent({
   //   id: req.body.sid,
   //   name: req.body.sname,
@@ -136,7 +168,6 @@ app.get("/Presenty", (req, res) => {
 // app.post("/Presenty", (req, res) => {
 
 // });
-
 
 // <% Present.forEach(function(student){ %>
 //   <tr>
