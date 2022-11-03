@@ -26,8 +26,16 @@ const StudentsSchema = new mongoose.Schema({
   rollno: String,
 });
 
+const PresentStudentSchema = new mongoose.Schema({
+  id: Number,
+  name: String,
+  rollno: String,
+  date: Date,
+});
+
 const User = new mongoose.model("User", UsersSchema);
 const Student = new mongoose.model("Student", StudentsSchema);
+const PresentStudent = new mongoose.model("PresentStudent", PresentStudentSchema);
 
 app.listen(3000, () => {
   console.log("Server is running on 3000");
@@ -86,8 +94,6 @@ app.post("/Compose", (req, res) => {
     rollno: req.body.StudentRollNo,
   });
 
-  console.log(newStudent);
-
   newStudent.save(function (err) {
     res.redirect("/Compose");
     console.log(`Student Added`);
@@ -98,7 +104,45 @@ app.get("/StudentList", (req, res) => {
   Student.find({}, function (err, results) {
     const studentArray = results.map((result) => result);
     const i = 1;
-    console.log(studentArray);
     res.render("StudentList", { i, studentArray });
   });
 });
+
+app.post("/StudentList", (req, res) => {
+  console.log(req.body)
+  // const newPresentStudents = PresentStudent({
+  //   id: req.body.sid,
+  //   name: req.body.sname,
+  //   rollno: req.body.srollno,
+  //   date: req.body.date
+  // })
+
+  // console.log(newPresentStudents)
+
+  // newPresentStudents.save(function(err){
+  //   if(err){
+  //     console.log(err);
+  //   } else {
+  //     console.log(`Presenty added`);
+  //     res.redirect("/Presenty");
+  //   }
+  // })
+});
+
+app.get("/Presenty", (req, res) => {
+  res.render("Presenty");
+});
+
+// app.post("/Presenty", (req, res) => {
+
+// });
+
+
+// <% Present.forEach(function(student){ %>
+//   <tr>
+//     <th scope="row"><%=id%></th>
+//     <td><input type="checkbox" ></td>
+//     <td ><%= student.name %></td>
+//     <td ><%= student.rollno %></td>
+//   </tr>
+//    <% }) %>
