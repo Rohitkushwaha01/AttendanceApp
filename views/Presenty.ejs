@@ -1,19 +1,31 @@
-<%- include('partials/header') %> <%- include('navbar') %>
+<%- include('partials/header') %> <%- include('partials/Facultynavbar') %>
 
 <div class="container">
-    <table class="table">
-        <thead>
-          <tr>
-            <th scope="col">ID</th>
-            <th scope="col">Present</th>
-            <th scope="col">Name</th>
-            <th scope="col">Roll No</th>
-          </tr>
-        </thead>
-        <tbody>
-          
-        </tbody>
-      </table>
+    <div class="mb-3 c-width">
+      <label for="exampleFormControlInput1" class="form-label">Date</label>
+      <input type="date" class="form-control" id="exampleFormControlInput1" name="date"/>
+    </div>
+    <table class="table-dark table table-striped print-container">
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Present</th>
+          <th scope="col">Name</th>
+          <th scope="col">Roll No</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% studentArray.forEach(function(student){ %>
+        <tr>
+          <th scope="row" name="sid"><%=i%></th>
+          <td><input type="checkbox" value="<%= student._id%>" onChange="this.form.submit"></td>
+          <td name="sname"><%= student.name %></td>
+          <td name="srollno"><%= student.rollno %></td>
+        </tr>
+        <% i++ %> <% }) %>
+      </tbody>
+    </table>
+    <button class="c-btn" onclick="window.print()">Submit</button>
 </div>
 
 <%- include('partials/footer') %>

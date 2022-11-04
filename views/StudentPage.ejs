@@ -1,0 +1,93 @@
+<%- include('partials/header') %> <%- include('partials/StudentNavbar') %>
+<div class="c-box">
+  
+  <div class="c-item1">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS57cxS-wC2GujcEE-N_c5epmqhydszCHIk1Q&usqp=CAU" alt="">
+    <div class="c-info">
+        <% results.forEach(result => { %>
+            <p>Name : <%=result.name%></p>
+            <p>Rollno : <%=result.rollno%></p>
+            <p>Email : <%=result.email%></p>
+            <p>Department : Electronics and telecommunication </p>
+            <p>College Name : Dr.D.Y.Patil institute of technology</p>
+        <% }) %>
+        
+    </div>
+  </div>
+  <div class="c-item2">
+    <div class="container my-1">
+        <table class="table table-dark table-striped ">
+            <thead>
+              <tr>
+                <th scope="col">13/2/2020</th>
+                <th scope="col">14/2/2020</th>
+                <th scope="col">15/2/2020</th>
+                <th scope="col">16/2/2020</th>
+                <th scope="col">17/2/2020</th>
+                <th scope="col">18/2/2020</th>
+                <th scope="col">19/2/2020</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Present</td>
+                <td>Present</td>
+                <td>Present</td>
+                <td><span class="c-span">Absent</span></td>
+                <td>Present</td>
+                <td><span class="c-span">Absent</span></td>
+                <td>Present</td>
+              </tr>
+            </tbody>
+          </table>
+    </div>
+    <div class="container">
+        <table class="table table-dark table-striped ">
+            <thead>
+              <tr>
+                <th scope="col">20/2/2020</th>
+                <th scope="col">21/2/2020</th>
+                <th scope="col">22/2/2020</th>
+                <th scope="col">23/2/2020</th>
+                <th scope="col">24/2/2020</th>
+                <th scope="col">25/2/2020</th>
+                <th scope="col">26/2/2020</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Present</td>
+                <td><span class="c-span">Absent</span></td>
+                <td>Present</td>
+                <td>Present</td>
+                <td><span class="c-span">Absent</span></td>
+                <td>Present</td>
+                <td>Present</td>
+              </tr>
+            </tbody>
+          </table>
+    </div>
+    <div class="c-student-summary container">
+        <div class="sumitem">
+            Total Lectures: 14
+        </div>
+        <div class="sumitem">
+            Number of days Lecture attended: 10
+        </div>
+        <div class="sumitem">
+            Missed lectures: 4
+        </div>
+    </div>
+    <div class="c-student-summary my-2 container">
+       <h4 class="my-2">Subjects</h4>
+       <p>1) Digital Communication</p>
+       <p>2) Electromagnetic field theory</p>
+       <p>3) Database Management System</p>
+       <p>4) Fundamentals of Java</p>
+       <p>5) Microcontroller</p>
+    </div>
+  </div>
+  </div>
+</div>
+
+<%- include('partials/footer') %>

@@ -1,4 +1,4 @@
-<%- include('partials/header') %> <%- include('homenavbar') %>
+<%- include('partials/header') %> <%- include('partials/homenavbar') %>
 
 <div class="c-container container">
   <img
@@ -7,21 +7,23 @@
     class="blur-img"
   />
   <h1>Student Login</h1>
-  <form class="c-prop">
+  <form class="c-prop" action="/StudentLogin" method="post">
     <div class="m-5">
       <label for="exampleInputEmail1" class="form-label">Email address</label>
       <input
         type="email"
         class="form-control"
         id="exampleInputEmail1"
-        aria-describedby="emailHelp"
         name="email"
       />
     </div>
     <div class="m-5">
-      <label for="exampleInputPassword1" class="form-label">Password</label>
-      <input type="password" class="form-control" id="exampleInputPassword1" name="password"/>
-  
+      <label class="form-label">Name</label>
+      <input type="text" class="form-control" name="name"/>
+    </div>
+    <div class="m-5">
+      <label class="form-label">Roll No</label>
+      <input type="text" class="form-control" name="rollno"/>
     </div>
     <div class="m-5">
       <button type="submit" class="btn btn-primary">Login</button>

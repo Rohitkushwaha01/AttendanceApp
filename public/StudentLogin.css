@@ -2,6 +2,8 @@
     background-color: rgba(153, 225, 170, 0.467) !important;
     color: rgb(0, 0, 0) !important;
     width: 50%;
+    border-radius: 10px;
+    padding: 30px;
 }
 
 .c-container{
@@ -22,5 +24,5 @@
     position: absolute;
     z-index: -1;
     width: 100%;
-    filter: blur(2px);
+    filter: blur(14px);
 }

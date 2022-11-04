@@ -12,3 +12,31 @@
     text-align: center;
     margin: 20px;
 }
+
+.c-student-summary{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #1ab4ff;
+    margin: auto;
+    width: 90%;
+}
+
+.sumitem{
+    width: 300px;
+    border-radius: 5px;
+    margin: 10px;
+}
+
+.c-span{
+    color: white;
+}
+
+@media print{
+    body{
+        visibility: hidden;
+    }
+    .print-container{
+        visibility: visible!important;
+    }
+}

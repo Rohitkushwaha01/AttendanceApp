@@ -1,29 +1,79 @@
-<%- include('partials/header') %> <%- include('FacultyNavbar') %>
+<%- include('partials/header') %> <%- include('partials/FacultyNavbar') %>
 <div class="c-box">
-  
   <div class="c-item1">
-    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS57cxS-wC2GujcEE-N_c5epmqhydszCHIk1Q&usqp=CAU" alt="">
+    <img
+      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS57cxS-wC2GujcEE-N_c5epmqhydszCHIk1Q&usqp=CAU"
+      alt=""
+    />
     <div class="c-info">
-      <% FacultyUser.forEach(result => { %>
-        <p>Name : <%=result.name%></p>
-        <p>Email Id : <%=result.email%></p>
-        <p>Designation : <%=result.designation%> </p>
-        <p>Department : ENTC </p>
-        <p>College Name : Dr.D.Y.Patil institute of technology</p>
-        <p>Contact Number : <%=result.contact%></p>
-      <% }) %>
+      <p>Name : <%=facultyName%></p>
+      <p>Email Id : <%=facultyEmail%></p>
+      <p>Designation : <%=facultyDesignation%></p>
+      <p>Department : ENTC</p>
+      <p>College Name : Dr.D.Y.Patil institute of technology</p>
+      <p>Contact Number : <%=facultyNumber%></p>
     </div>
   </div>
   <div class="c-item2">
-    <div class="">
-    <form action="/Compose" method="get">
-      <Button>Add Student</Button>
-    </form>
-    <form action="/StudentList" method="get">
-      <Button>Students List</Button>
-    </form>
+    <div class="c-flex2">
+      <form action="/Compose" method="get">
+        <Button class="c-btn">Add Student</Button>
+      </form>
+      <form action="/StudentList" method="get">
+        <Button class="c-btn">Students List</Button>
+      </form>
+      <form action="/Presenty" method="get">
+        <Button class="c-btn">Attendance</Button>
+      </form>
+    </div>
+    <div class="lecture container my-5">
+      <div class="container">
+          <h3>Today's Lectures</h3>
+          <table class="table-dark table table-striped">
+          <thead>
+            <tr>
+              <th scope="col">10:10-:11:10</th>
+              <th scope="col">11:10-:12:10</th>
+              <th scope="col">01:10-:02:10</th>
+              <th scope="col">02:10-:03:10</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>602 Digital Communication [A]</td>
+              <td>ACOM Lab Practical [B]</td>
+              <td>No lecture</td>
+              <td>602 Digital Communication [B]</td>
+            </tr>
+          </tbody>
+        </table>
+      </div> 
+      <div class="container">
+        <h3>Tomorrow's Lectures</h3>
+        <table class="table-dark table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">10:10-:11:10</th>
+            <th scope="col">11:10-:12:10</th>
+            <th scope="col">01:10-:02:10</th>
+            <th scope="col">02:10-:03:10</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>602 Digital Communication [A]</td>
+            <td>ACOM Lab Practical [B]</td>
+            <td>No lecture</td>
+            <td>602 Digital Communication [B]</td>
+          </tr>
+        </tbody>
+      </table>
+      </div> 
+    </div>
+    
+</div>
   </div>
-  </div>
+  
 </div>
 
 <%- include('partials/footer') %>

@@ -28,6 +28,7 @@ const FacultyUsersSchema = new mongoose.Schema({
 const StudentsSchema = new mongoose.Schema({
   name: String,
   rollno: String,
+  email: String
 });
 
 const PresentStudentSchema = new mongoose.Schema({
@@ -49,27 +50,47 @@ app.listen(3000, () => {
 });
 
 app.get("/", (req, res) => {
-  res.render("home");
+  res.render("FacultyRegister");
 });
 
 app.get("/StudentLogin", (req, res) => {
   res.render("StudentLogin");
 });
 
+app.post("/StudentLogin", (req, res)=>{
+  console.log(req.body.email)
+  console.log(req.body.name)
+  console.log(req.body.rollno)
+  Student.find({"rollno":req.body.rollno}, function(err, results){
+    if(err){
+      console.log(err);
+    }
+    else{
+      console.log(results)
+      console.log(results[0].name, req.body.name)
+      console.log(results[0].email, req.body.email)
+      if(results[0].email == req.body.email){
+        res.render("StudentPage", {results})
+      }
+      else{
+        console.log("Wrong")
+      }
+    }
+  })
+})
+
 app.get("/FacultyLogin", (req, res) => {
   res.render("FacultyLogin");
 });
 
 app.post("/FacultyLogin", function (req, res) {
-  console.log(req.body.email)
-  FacultyUser.find({"password":req.body.password}, function(err, foundUser){
-    if(foundUser){
-      // console.log(foundUser);
-      res.redirect('/FacultyPage')
-    }
-    else{
-      console.log("not found")
-    }
+  FacultyUser.find({"password":req.body.password}, function(err, results){
+    res.render("FacultyPage", {
+      facultyName: results[0].name,
+      facultyEmail: results[0].email,
+      facultyDesignation: results[0].designation,
+      facultyNumber: results[0].contact,
+    });
   })
 });
 
@@ -78,11 +99,7 @@ app.get("/FacultyRegister", (req, res) => {
 });
 
 app.get("/FacultyPage", (req, res) => {
-  FacultyUser.find({"password":"12345"}, function(err, results){
-    const FacultyUser = results.map((result) => result);
-    // console.log(FacultyUser)
-    res.render("FacultyPage", {FacultyUser});
-  })
+  res.render("FacultyPage")
 });
 
 app.post("/FacultyRegister", (req, res) => {
@@ -101,13 +118,12 @@ app.post("/FacultyRegister", (req, res) => {
       console.log(err);
     } else {
       console.log(`you are Registered`);
-      // res.render("/FacultyPage", {
-      //   facultyName: req.body.facultyName,
-      //   facultyEmail: req.body.facultyEmail,
-      //   facultyDesignation: req.body.facultyDesignation,
-      //   facultyNumber: req.body.facultyNumber,
-      // });
-      res.redirect("/FacultyPage");
+      res.render("FacultyPage", {
+        facultyName: req.body.facultyName,
+        facultyEmail: req.body.facultyEmail,
+        facultyDesignation: req.body.facultyDesignation,
+        facultyNumber: req.body.facultyNumber,
+      });
     }
   });
 });
@@ -120,6 +136,7 @@ app.post("/Compose", (req, res) => {
   const newStudent = Student({
     name: req.body.StudentName,
     rollno: req.body.StudentRollNo,
+    email: req.body.StudentEmail,
   });
 
   newStudent.save(function (err) {
@@ -138,27 +155,14 @@ app.get("/StudentList", (req, res) => {
 
 app.post("/StudentList", (req, res) => {
   console.log(req.body);
-  // const newPresentStudents = PresentStudent({
-  //   id: req.body.sid,
-  //   name: req.body.sname,
-  //   rollno: req.body.srollno,
-  //   date: req.body.date
-  // })
-
-  // console.log(newPresentStudents)
-
-  // newPresentStudents.save(function(err){
-  //   if(err){
-  //     console.log(err);
-  //   } else {
-  //     console.log(`Presenty added`);
-  //     res.redirect("/Presenty");
-  //   }
-  // })
 });
 
 app.get("/Presenty", (req, res) => {
-  res.render("Presenty");
+  Student.find({}, function (err, results) {
+    const studentArray = results.map((result) => result);
+    const i = 1;
+    res.render("Presenty", { i, studentArray });
+  });
 });
 
 // app.post("/Presenty", (req, res) => {
