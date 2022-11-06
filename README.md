@@ -5,6 +5,9 @@ College project : Building attendance system
 ### Faculty Registeration page
 <img src="https://github.com/Rohitkushwaha01/AttendanceApp/blob/main/applicationImage/FacultyRegistrationPage.png?raw=true">
 
+### Faculty Login page
+<img src="https://github.com/Rohitkushwaha01/AttendanceApp/blob/main/applicationImage/FacultyLoginPage.png?raw=true">
+
 ### Faculty DashBoard page
 <img src="https://github.com/Rohitkushwaha01/AttendanceApp/blob/main/applicationImage/FacultyDashboardPage.png?raw=true">
 
