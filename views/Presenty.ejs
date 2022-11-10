@@ -1,56 +1,56 @@
 <%- include('partials/header') %> <%- include('partials/Facultynavbar') %>
 
 <div class="container">
-    <div class="mb-3 mt-3 visible d-flex">
-      <div class="">
-        <label for="exampleFormControlInput1" class="form-label">Date</label>
-        <input type="datetime-local" class="form-control datetime-width"  name="date"/>
-      </div>
-      <div>
-        <label for="exampleFormControlInput1" class=" form-label">Subject</label>
-        <select name="cars" id="cars" class="sub-width form-control">
-          <option value="volvo">Digital Communication</option>
-          <option value="saab">Electromagnetic field theory</option>
-          <option value="mercedes">Database management system</option>
-          <option value="audi">Microcontroller</option>
-          <option value="audi">Fundamentals of java</option>
-          <option value="audi">Computer networks</option>
-        </select>
-      </div>
-
+  <div class="mb-3 mt-3 visible d-flex">
+    <div class="">
+      <label for="exampleFormControlInput1" class="form-label">Date</label>
+      <input
+        type="datetime-local"
+        class="form-control datetime-width"
+        name="date"
+      />
     </div>
-    
-    <table class="table-dark table table-striped visible">
-      <thead>
-        <tr>
-          <th scope="col">ID</th>
-          <th scope="col">Present</th>
-          <th scope="col">Name</th>
-          <th scope="col">Roll No</th>
-        </tr>
-      </thead>
-      <tbody>
-        <% studentArray.forEach(function(student){ %>
-        <tr>
-          <th scope="row" name="sid"><%=i%></th>
-          <td class="present"><input type="checkbox" value="<%= student._id%>" id="check"  class="not-visible">Present</td>
-          <td name="sname"><%= student.name %></td>
-          <td name="srollno"><%= student.rollno %></td>
-        </tr>
-        <% i++ %> <% }) %>
-      </tbody>
-    </table>
-    <button class="c-btn" onclick="window.print()">Submit</button>
-</div>
-<script>
-    let checkbox = document.querySelectorAll("#check");
-    let presentAbsent = document.querySelectorAll('.present');
+    <div>
+      <label for="exampleFormControlInput1" class="form-label">Subject</label>
+      <select name="cars" id="cars" class="sub-width form-control">
+        <option value="volvo">Digital Communication</option>
+        <option value="saab">Electromagnetic field theory</option>
+        <option value="mercedes">Database management system</option>
+        <option value="audi">Microcontroller</option>
+        <option value="audi">Fundamentals of java</option>
+        <option value="audi">Computer networks</option>
+      </select>
+    </div>
+  </div>
 
-    for (let i = 0; i < checkbox.length; i++) {
-      checkbox[i].addEventListener("click", function(){
-        presentAbsent[i].innerText = "Absent";
-      })
-    }
-  
-</script>
+  <table class="table-dark table table-striped visible">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Present</th>
+        <th scope="col">Name</th>
+        <th scope="col">Roll No</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% studentArray.forEach(function(student){ %>
+      <tr>
+        <th scope="row" name="sid"><%=i%></th>
+        <td class="present">
+          <input
+            type="checkbox"
+            value="<%= student._id%>"
+            id="check"
+            class="not-visible"
+          />Present
+        </td>
+        <td name="sname"><%= student.name %></td>
+        <td name="srollno"><%= student.rollno %></td>
+      </tr>
+      <% i++ %> <% }) %>
+    </tbody>
+  </table>
+  <button class="c-btn" onclick="window.print()">Submit</button>
+</div>
+<script></script>
 <%- include('partials/footer') %>
