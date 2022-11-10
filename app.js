@@ -165,15 +165,6 @@ app.get("/Presenty", (req, res) => {
   });
 });
 
-// app.post("/Presenty", (req, res) => {
-
-// });
-
-// <% Present.forEach(function(student){ %>
-//   <tr>
-//     <th scope="row"><%=id%></th>
-//     <td><input type="checkbox" ></td>
-//     <td ><%= student.name %></td>
-//     <td ><%= student.rollno %></td>
-//   </tr>
-//    <% }) %>
+app.post("/Presenty", (req, res) => {
+  console.log(req.body);
+});

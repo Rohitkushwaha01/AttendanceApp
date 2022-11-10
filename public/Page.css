@@ -32,11 +32,23 @@
     color: white;
 }
 
+.datetime-width{
+    width: 182px;
+    margin-right: 20px;
+}
+
+.sub-width{
+    width: 200px;
+}
+
 @media print{
     body{
         visibility: hidden;
     }
-    .print-container{
+    .visible{
         visibility: visible!important;
+    }
+    .not-visible {
+        display: none!important;
     }
 }
