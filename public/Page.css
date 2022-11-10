@@ -41,6 +41,10 @@
     width: 200px;
 }
 
+li a:hover{
+    color: #1ab4ff;
+}
+
 @media print{
     body{
         visibility: hidden;

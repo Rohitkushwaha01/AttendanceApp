@@ -22,3 +22,6 @@ College project : Building attendance system
 
 ### Student DashBoard page
 <img src="https://github.com/Rohitkushwaha01/AttendanceApp/blob/main/applicationImage/StudentPage.png?raw=true">
+
+### PDF [This kind of PDF is being generated after Attendance]
+<img src="https://github.com/Rohitkushwaha01/AttendanceApp/blob/main/applicationImage/GeneratedPDF.png?raw=true">
