@@ -24,4 +24,4 @@ College project : Building attendance system
 <img src="https://github.com/Rohitkushwaha01/AttendanceApp/blob/main/applicationImage/StudentPage.png?raw=true">
 
 ### PDF [This kind of PDF is being generated after Attendance]
-<img src="https://github.com/Rohitkushwaha01/AttendanceApp/blob/main/applicationImage/GeneratedPDF.png?raw=true">
+<img src="https://github.com/Rohitkushwaha01/AttendanceApp/blob/main/applicationImage/GeneratedPDF%20.png">
