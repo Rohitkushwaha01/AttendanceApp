@@ -1,9 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital@1&family=Roboto+Condensed:wght@300;400&display=swap');
 .c-prop{
-    background-color: rgba(153, 225, 170, 0.467) !important;
+    background-color: rgba(0, 0, 0, 0.467) !important;
     color: rgb(0, 0, 0) !important;
     width: 50%;
     border-radius: 10px;
     padding: 30px;
+}
+
+.font-label{
+    font-size: 22px;
+    font-family: 'Roboto Condensed';
+    letter-spacing: 1.2px;
+}
+
+.font{
+    font-size: 18px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.c-hover:hover{
+    color: blue;
+}
+
+.c-nav{
+    justify-content: space-between;
+    width: 47%;
 }
 
 .c-container{

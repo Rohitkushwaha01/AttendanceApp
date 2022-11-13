@@ -25,7 +25,7 @@
 }
 
 .c-item2{
-    background-color: rgb(128, 125, 125);
+    background-color: rgb(255, 248, 248);
     color: rgb(13, 12, 12);
     width: 70%;
 }
@@ -40,4 +40,8 @@
     padding: 10px 26px;
     border-radius: 5px;
     border: 2px solid #1ab4ff;
+}
+
+.c-btn:hover{
+    background-color: #1ab4ff;
 }

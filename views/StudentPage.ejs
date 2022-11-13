@@ -3,19 +3,22 @@
   
   <div class="c-item1">
     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS57cxS-wC2GujcEE-N_c5epmqhydszCHIk1Q&usqp=CAU" alt="">
-    <div class="c-info">
+    <div class="c-info font">
         <% results.forEach(result => { %>
             <p>Name : <%=result.name%></p>
             <p>Rollno : <%=result.rollno%></p>
             <p>Email : <%=result.email%></p>
             <p>Department : Electronics and telecommunication </p>
             <p>College Name : Dr.D.Y.Patil institute of technology</p>
+            <p>Universtiy : Savitribai Phule Universtiy</p>
+            <p>Year : Third Year </p>
+            <p>Backlogs: 0</p>
         <% }) %>
         
     </div>
   </div>
   <div class="c-item2">
-    <div class="container my-1">
+    <div class="container my-1 font">
         <table class="table table-dark table-striped ">
             <thead>
               <tr>
@@ -41,7 +44,7 @@
             </tbody>
           </table>
     </div>
-    <div class="container">
+    <div class="container font">
         <table class="table table-dark table-striped ">
             <thead>
               <tr>
@@ -67,7 +70,7 @@
             </tbody>
           </table>
     </div>
-    <div class="c-student-summary container">
+    <div class="c-student-summary container font">
         <div class="sumitem">
             Total Lectures: 14
         </div>
@@ -78,8 +81,8 @@
             Missed lectures: 4
         </div>
     </div>
-    <div class="c-student-summary my-2 container">
-       <h4 class="my-2">Subjects</h4>
+    <div class="c-student-summary my-2 container font">
+       <h4 class="my-2">Subjects [5th Semester]</h4>
        <p>1) Digital Communication</p>
        <p>2) Electromagnetic field theory</p>
        <p>3) Database Management System</p>
