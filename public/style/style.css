@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital@1&family=Roboto+Condensed:wght@300;400&display=swap');
+
+.c-flex{
+    justify-content: space-around;
+    align-items: center;
+    height: 80vh;
+}
+
+.items{
+    width: 50%;
+    height: 80px;
+    background-color: blue;
+    color: white;
+    text-align: center;
+    margin: 20px;
+}
+
+.c-student-summary{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #1ab4ff;
+    margin: auto;
+    width: 90%;
+}
+
+.sumitem{
+    width: 400px;
+    border-radius: 5px;
+    margin: 10px;
+}
+
+.c-span{
+    color: white;
+}
+
+.datetime-width{
+    width: 182px;
+    margin-right: 20px;
+}
+
+.sub-width{
+    width: 200px;
+}
+
+li a:hover{
+    color: #1ab4ff;
+}
+
+@media print{
+    body{
+        visibility: hidden;
+    }
+    .visible{
+        visibility: visible!important;
+    }
+    .not-visible {
+        display: none!important;
+    }
+}
+
+.c-prop{
+    background-color: rgba(0, 0, 0, 0.467) !important;
+    color: rgb(0, 0, 0) !important;
+    width: 50%;
+    border-radius: 10px;
+    padding: 30px;
+}
+
+.font-label{
+    font-size: 22px;
+    font-family: 'Roboto Condensed';
+    letter-spacing: 1.2px;
+}
+
+.font{
+    font-size: 18px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.c-hover:hover{
+    color: blue;
+}
+
+.c-nav{
+    justify-content: space-between;
+    width: 47%;
+}
+
+.c-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+}
+
+@media (max-width: 768px) {
+    .c-prop{
+        width: 100%;
+    }
+ }
+
+.blur-img{
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    filter: blur(14px);
+}
+
+.c-width{
+    width: 15%;
+}
+
+
+.c-box{
+    display: flex;
+    justify-content: space-between;
+    height: 92vh;
+}
+
+.c-item1{
+    background-color: rgba(0, 0, 0, 0.814);
+    color: white;
+    width: 30%;
+    font-size: 17px;
+}
+
+.c-item1 img{
+    text-align: center;
+    border-radius: 100%;
+    width: 30%;
+    height: 20%;
+    display: block;
+    margin: 20px auto;
+}
+
+.c-info{
+    margin: 20px 5px 5px 20px;
+}
+
+.c-item2{
+    background-color: rgb(255, 248, 248);
+    color: rgb(13, 12, 12);
+    width: 70%;
+}
+
+.c-flex2{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.c-btn{
+    padding: 10px 26px;
+    border-radius: 5px;
+    border: 2px solid #1ab4ff;
+}
+
+.c-btn:hover{
+    background-color: #1ab4ff;
+}
