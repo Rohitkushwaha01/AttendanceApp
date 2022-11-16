@@ -34,13 +34,14 @@
     color: white;
 }
 
-.datetime-width{
-    width: 182px;
+.datetime-width, .sub-width{
+    width: 250px;
     margin-right: 20px;
+    font-size: 1.3rem;
 }
 
-.sub-width{
-    width: 200px;
+.date, .subject{
+    font-size: 1.2rem;
 }
 
 li a:hover{
@@ -155,6 +156,17 @@ li a:hover{
     padding: 10px 26px;
     border-radius: 5px;
     border: 2px solid #1ab4ff;
+}
+
+.remove-btn{
+    padding: 0px 6px;
+    border-radius: 5px;
+    border: 2px solid #000000;
+}
+
+.remove-btn:hover{
+    background-color: #1ab4ff;
+    color: white;
 }
 
 .c-btn:hover{
