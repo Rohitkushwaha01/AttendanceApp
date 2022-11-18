@@ -1,21 +1,23 @@
 <%- include('partials/header') %> <%- include('partials/FacultyNavbar') %>
+
 <div class="c-container d-flex justify-content-center">
   <form class="c-prop font-label" action="/Compose" method="post">
     <div class="m-5">
       <label class="form-label">Name of Student</label>
-      <input type="text" class="form-control" name="StudentName"/>
+      <input type="text" class="form-control input-name" name="StudentName"/>
     </div>
     <div class="m-5">
       <label class="form-label">Email</label>
-      <input type="email" class="form-control" name="StudentEmail"/>
+      <input type="email" class="form-control input-email" name="StudentEmail"/>
     </div>
     <div class="m-5">
       <label for="exampleInputPassword1" class="form-label">Roll No</label>
-      <input type="text" class="form-control" name="StudentRollNo"/>
+      <input type="text" class="form-control input-roll" name="StudentRollNo"/>
     </div>
     <div class="m-5">
-      <button type="submit" class="btn c-btn btn-dark w-100">Add Student</button>
+      <button type="submit" class="btn c-btn btn-dark w-100 add-btn">Add Student</button>
     </div>
+    <div class="m-5 add-or-not"></div>
   </form>
 </div>
 

@@ -138,7 +138,7 @@ app.post("/Compose", (req, res) => {
   });
 
   newStudent.save(function (err) {
-    res.redirect("/StudentList");
+    res.redirect("/Compose");
     console.log(`Student Added`);
   });
 });
