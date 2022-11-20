@@ -2,8 +2,8 @@ require("dotenv").config();
 const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
-const mongodb = require("mongodb");
-const ejs = require("ejs");
+const FacultyUsersSchema = require("./models/Faculty");
+const StudentsSchema = require("./models/Student");
 
 const app = express();
 
@@ -11,46 +11,19 @@ app.set("view engine", "ejs");
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: true }));
 
-// mongoose.connect(
-//   `mongodb+srv://${process.env.MONGOUSERID}:${process.env.MONGOPASS}@cluster0.gotayl4.mongodb.net/AttendanceDB`
-// );
-
+// Mongo connection.
 mongoose.connect("mongodb://localhost:27017/AttendanceDB");
 
-const FacultyUsersSchema = new mongoose.Schema({
-  name: String,
-  email: String,
-  designation: String,
-  contact: Number,
-  password: String,
-});
-
-const StudentsSchema = new mongoose.Schema({
-  name: String,
-  rollno: String,
-  email: String,
-});
-
-const PresentStudentSchema = new mongoose.Schema({
-  id: Number,
-  name: String,
-  rollno: String,
-  date: Date,
-});
-
+// Schema's
 const FacultyUser = new mongoose.model("User", FacultyUsersSchema);
 const Student = new mongoose.model("Student", StudentsSchema);
-const PresentStudent = new mongoose.model(
-  "PresentStudent",
-  PresentStudentSchema
-);
 
 app.listen(3000, () => {
   console.log("Server is running on 3000");
 });
 
 app.get("/", (req, res) => {
-  res.render("FacultyRegister");
+  res.render('FacultyRegister');
 });
 
 app.get("/StudentLogin", (req, res) => {
