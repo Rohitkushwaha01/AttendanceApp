@@ -23,7 +23,7 @@ app.listen(3000, () => {
 });
 
 app.get("/", (req, res) => {
-  res.render('FacultyRegister');
+  res.render("FacultyRegister");
 });
 
 app.get("/StudentLogin", (req, res) => {
@@ -110,10 +110,13 @@ app.post("/Compose", (req, res) => {
     email: req.body.StudentEmail,
   });
 
-  newStudent.save(function (err) {
-    res.redirect("/Compose");
-    console.log(`Student Added`);
-  });
+  setTimeout(() => {
+    newStudent.save(function (err) {
+      res.redirect("/Compose");
+      console.log(`Student Added`);
+    });
+  }, 2000);
+
 });
 
 app.get("/StudentList", (req, res) => {

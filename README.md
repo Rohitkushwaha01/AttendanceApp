@@ -9,7 +9,7 @@ College project : Building attendance system
 <img src="https://github.com/Rohitkushwaha01/AttendanceApp/blob/main/applicationImage/FacultyLoginPage.png?raw=true">
 
 ### Faculty DashBoard page
-<img src="https://github.com/Rohitkushwaha01/AttendanceApp/blob/main/applicationImage/FacultyDashboardPage1.png?raw=true">
+<img src="https://github.com/Rohitkushwaha01/AttendanceApp/blob/main/applicationImage/FacultyDashboardPage.png?raw=true">
 
 ### Faculty Add Student page
 <img src="https://github.com/Rohitkushwaha01/AttendanceApp/blob/main/applicationImage/AddStudentPage.png?raw=true">

@@ -173,3 +173,7 @@ li a:hover{
 .c-btn:hover{
     background-color: #1ab4ff;
 }
+
+.hide{
+    display: none;
+}
